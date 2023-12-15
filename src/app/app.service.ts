@@ -8,11 +8,10 @@ import { Convidado } from './convidado';
 })
 export class AppService {
 
-  apiURL: string = 'http://container-spring-docker-v3:8080'; //nome do container envez de localhost
-  apiURLLocal: string = 'http://localhost:8090';
+  apiURLLocal: string = 'http://localhost:8080';
   constructor( private http: HttpClient) { }
 
   getConvidados() : Observable<Convidado[]>{  
-    return this.http.get<Convidado[]>(this.apiURL);
+    return this.http.get<Convidado[]>(this.apiURLLocal);
   }
 }
